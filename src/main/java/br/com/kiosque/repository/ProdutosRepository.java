@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import br.com.kiosque.model.Produtos;
 
-@Repository
-public interface ProdutosRepository extends JpaRepository<Produtos, Long> {
+@Repository // Annotation que faz o link da tapela Produtos do banco com a classe Produtos
+public interface ProdutosRepository extends JpaRepository<Produtos, Long> { // Interface ProdutosRepository extendendo JpaRepository
 
 }

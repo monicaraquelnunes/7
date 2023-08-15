@@ -11,12 +11,12 @@ import br.com.kiosque.model.Produtos;
 import br.com.kiosque.repository.ProdutosRepository;
 
 @Service
-public class ProdutosServices {
-	private ProdutosRepository produtosRepository;
+public class ProdutosServices { // Iniciando a classe ProdutosServices
+	private ProdutosRepository produtosRepository; // Criando o atributo produtosRepository
 	
 	@Autowired
-	public ProdutosServices (ProdutosRepository produtosRepository) {
-		this.produtosRepository = produtosRepository;
+	public ProdutosServices (ProdutosRepository produtosRepository) { // Construtor servindo para iniciar de forma automática o atributo produtosRepository
+		this.produtosRepository = produtosRepository; // Alimentando o atributo produtosRepository com o argumento produtosRepository
 	}
 	
 	public void saveProdutos(Produtos produtos) {
