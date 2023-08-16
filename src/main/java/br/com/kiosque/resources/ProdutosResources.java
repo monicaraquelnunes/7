@@ -34,7 +34,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 public class ProdutosResources { // Início da classe ProdutosResources
 	
 	private static final Logger logger = LoggerFactory.getLogger(ProdutosResources.class); // Implementação do Log4j no projeto(implementando o objeto para ouvir o logger)
-	private ProdutosServices produtosServices; // Declarando o objeto para acessar os métodos da classe ProdutosService
+	private ProdutosServices produtosServices; // Declarando o objeto para acessar os métodos da classe ProdutosServices
 	
 	@Autowired // Annotation para realizar uma injeção de dependência automática em classes gerenciadas pelo contêiner Spring. 
 	public ProdutosResources(ProdutosServices produtosServices) { // Construtor servindo para iniciar de forma automática o atributo produtosServices
@@ -50,7 +50,7 @@ public class ProdutosResources { // Início da classe ProdutosResources
 		@ApiResponse(responseCode = "201", content = { @Content(schema = @Schema(implementation = Produtos.class), mediaType = "application/json") }),
 		@ApiResponse(responseCode = "404", content = { @Content(schema = @Schema()) }),
 		@ApiResponse(responseCode = "500", content = { @Content(schema = @Schema()) }) })
-	@PostMapping // Anotate que serve para cadastrar(criar e salvar) um produto
+	@PostMapping // Annotation que serve para cadastrar(criar e salvar) um produto
 	public ResponseEntity<Produtos> saveProdutos(@RequestBody Produtos produtos) { // Método saveProdutos com argumento produtos
 		logger.info("Chamando método saveProdutos com a requisição: "+" "+produtos); // Descrição personalizada para o logger
 		produtosServices.saveProdutos(produtos); // Método saveProdutos está processando o atributo produtos no banco de dados
